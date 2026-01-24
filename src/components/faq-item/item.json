@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_faq_item_items",
+  "info": {
+    "displayName": "item",
+    "icon": "question"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "answer": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

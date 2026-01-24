@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_itinerary_item_items",
+  "info": {
+    "displayName": "item"
+  },
+  "options": {},
+  "attributes": {
+    "time": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}
