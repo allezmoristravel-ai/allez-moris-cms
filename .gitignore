@@ -129,3 +129,5 @@ dist
 build
 .strapi-updater.json
 .strapi-cloud.json
+bulk_basic_data_activities.json
+migrate.js
