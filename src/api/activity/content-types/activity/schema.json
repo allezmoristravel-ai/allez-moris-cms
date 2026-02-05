@@ -42,7 +42,15 @@
         "images"
       ]
     },
-    "price": {
+    "bookingWidget": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "providerRate": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -88,16 +96,8 @@
         }
       }
     },
-    "netRate": {
+    "allezmorisRate": {
       "type": "decimal",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "bookingWidget": {
-      "type": "blocks",
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -176,6 +176,37 @@
       },
       "component": "faq-item.item",
       "repeatable": true
+    },
+    "region": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "enum": [
+        "North",
+        "South",
+        "East",
+        "West"
+      ]
+    },
+    "agentRate": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": 0
+    },
+    "childPrice": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

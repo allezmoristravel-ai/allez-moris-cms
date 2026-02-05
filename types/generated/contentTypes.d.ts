@@ -483,13 +483,32 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    bookingWidget: Schema.Attribute.Blocks &
+    agentRate: Schema.Attribute.Decimal &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<0>;
+    allezmorisRate: Schema.Attribute.Decimal &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
+    bookingWidget: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
+    childPrice: Schema.Attribute.Decimal &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     coverImage: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -566,12 +585,6 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    netRate: Schema.Attribute.Decimal &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     overview: Schema.Attribute.RichText &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -579,13 +592,13 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    price: Schema.Attribute.String &
+    provider: Schema.Attribute.Relation<'oneToOne', 'api::provider.provider'>;
+    providerRate: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    provider: Schema.Attribute.Relation<'oneToOne', 'api::provider.provider'>;
     publicPrice: Schema.Attribute.Decimal &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -593,6 +606,12 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    region: Schema.Attribute.Enumeration<['North', 'South', 'East', 'West']> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Schema.Attribute.UID & Schema.Attribute.Required;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
