@@ -579,6 +579,12 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::activity.activity'
     >;
+    locationUrl: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     maxPersons: Schema.Attribute.Integer &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

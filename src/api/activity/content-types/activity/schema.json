@@ -207,6 +207,14 @@
           "localized": true
         }
       }
+    },
+    "locationUrl": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }
