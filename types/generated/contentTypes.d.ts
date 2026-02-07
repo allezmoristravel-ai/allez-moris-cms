@@ -568,6 +568,13 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
         };
       }> &
       Schema.Attribute.DefaultTo<true>;
+    isGroupPrice: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<false>;
     itinerary: Schema.Attribute.Component<'itinerary-item.item', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
