@@ -17,12 +17,7 @@
   "attributes": {
     "slug": {
       "type": "uid",
-      "required": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "required": true
     },
     "internalName": {
       "type": "string",
