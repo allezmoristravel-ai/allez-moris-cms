@@ -17,7 +17,12 @@
   "attributes": {
     "slug": {
       "type": "uid",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "internalName": {
       "type": "string",
