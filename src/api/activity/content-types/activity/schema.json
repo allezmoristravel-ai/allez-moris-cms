@@ -224,6 +224,23 @@
         }
       },
       "default": false
+    },
+    "subcategory": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "enum": [
+        "Scuba Diving",
+        "Fishing Experience",
+        "Catamaran Trip",
+        "Private Boat Trip",
+        "Hike",
+        "Cultural Tour",
+        "Kayak Tour"
+      ]
     }
   }
 }
