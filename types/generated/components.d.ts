@@ -7,7 +7,7 @@ export interface FaqItemItem extends Struct.ComponentSchema {
     icon: 'question';
   };
   attributes: {
-    answer: Schema.Attribute.String & Schema.Attribute.Required;
+    answer: Schema.Attribute.Text & Schema.Attribute.Required;
     question: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -18,7 +18,7 @@ export interface ItineraryItemItem extends Struct.ComponentSchema {
     displayName: 'item';
   };
   attributes: {
-    description: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
     time: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
