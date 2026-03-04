@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "singularName": "booking",
+    "pluralName": "bookings",
+    "displayName": "Booking"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bookingType": {
+      "type": "enumeration",
+      "required": true,
+      "default": "activity",
+      "enum": [
+        "car_rental",
+        "activity",
+        "accommodation"
+      ]
+    },
+    "startDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "endDate": {
+      "type": "datetime"
+    },
+    "participants": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "bookingStatus": {
+      "type": "enumeration",
+      "required": true,
+      "default": "pending",
+      "enum": [
+        "pending",
+        "confirmed",
+        "cancelled",
+        "completed"
+      ]
+    },
+    "totalPrice": {
+      "type": "decimal",
+      "required": true
+    },
+    "client": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::client.client",
+      "inversedBy": "bookings"
+    },
+    "paymentStatus": {
+      "type": "enumeration",
+      "enum": [
+        "unpaid",
+        "paypal_processing",
+        "paid",
+        "refunded",
+        "failed"
+      ]
+    },
+    "paypalOrderId": {
+      "type": "string"
+    },
+    "paypalCaptureId": {
+      "type": "string"
+    },
+    "activity": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::activity.activity",
+      "private": true,
+      "inversedBy": "bookings"
+    }
+  }
+}

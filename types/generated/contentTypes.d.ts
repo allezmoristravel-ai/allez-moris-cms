@@ -459,6 +459,8 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    bookings: Schema.Attribute.Relation<'oneToMany', 'api::booking.booking'> &
+      Schema.Attribute.Private;
     bookingWidget: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -646,6 +648,62 @@ export interface ApiAgentAgent extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBookingBooking extends Struct.CollectionTypeSchema {
+  collectionName: 'bookings';
+  info: {
+    displayName: 'Booking';
+    pluralName: 'bookings';
+    singularName: 'booking';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    activity: Schema.Attribute.Relation<'manyToOne', 'api::activity.activity'> &
+      Schema.Attribute.Private;
+    bookingStatus: Schema.Attribute.Enumeration<
+      ['pending', 'confirmed', 'cancelled', 'completed']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'pending'>;
+    bookingType: Schema.Attribute.Enumeration<
+      ['car_rental', 'activity', 'accommodation']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'activity'>;
+    client: Schema.Attribute.Relation<'manyToOne', 'api::client.client'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    endDate: Schema.Attribute.DateTime;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::booking.booking'
+    > &
+      Schema.Attribute.Private;
+    participants: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    paymentStatus: Schema.Attribute.Enumeration<
+      ['unpaid', 'paypal_processing', 'paid', 'refunded', 'failed']
+    >;
+    paypalCaptureId: Schema.Attribute.String;
+    paypalOrderId: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    startDate: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    totalPrice: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -690,18 +748,22 @@ export interface ApiClientClient extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    clientId: Schema.Attribute.UID;
+    bookings: Schema.Attribute.Relation<'oneToMany', 'api::booking.booking'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    email: Schema.Attribute.Email;
+    email: Schema.Attribute.Email &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    firstName: Schema.Attribute.String & Schema.Attribute.Required;
+    lastName: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::client.client'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    phoneNumber: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1256,6 +1318,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::activity.activity': ApiActivityActivity;
       'api::agent.agent': ApiAgentAgent;
+      'api::booking.booking': ApiBookingBooking;
       'api::category.category': ApiCategoryCategory;
       'api::client.client': ApiClientClient;
       'api::provider.provider': ApiProviderProvider;

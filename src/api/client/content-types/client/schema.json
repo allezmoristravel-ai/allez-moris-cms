@@ -11,14 +11,27 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string"
+    "firstName": {
+      "type": "string",
+      "required": true
     },
-    "clientId": {
-      "type": "uid"
+    "lastName": {
+      "type": "string",
+      "required": true
     },
     "email": {
-      "type": "email"
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "bookings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::booking.booking",
+      "mappedBy": "client"
     }
   }
 }
