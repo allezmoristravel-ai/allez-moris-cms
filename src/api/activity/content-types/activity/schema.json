@@ -37,7 +37,7 @@
           "localized": false
         }
       },
-      "multiple": false,
+      "multiple": true,
       "allowedTypes": [
         "images"
       ]
