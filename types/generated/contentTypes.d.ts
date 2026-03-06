@@ -459,8 +459,7 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    bookings: Schema.Attribute.Relation<'oneToMany', 'api::booking.booking'> &
-      Schema.Attribute.Private;
+    bookings: Schema.Attribute.Relation<'oneToMany', 'api::booking.booking'>;
     bookingWidget: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -656,7 +655,7 @@ export interface ApiBookingBooking extends Struct.CollectionTypeSchema {
     singularName: 'booking';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     activity: Schema.Attribute.Relation<'manyToOne', 'api::activity.activity'> &
@@ -745,7 +744,7 @@ export interface ApiClientClient extends Struct.CollectionTypeSchema {
     singularName: 'client';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     bookings: Schema.Attribute.Relation<'oneToMany', 'api::booking.booking'>;
