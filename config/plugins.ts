@@ -1,6 +1,7 @@
 export default () => ({
     upload: {
         config: {
+            sizeLimit: 5 * 1024 * 1024, // 5MB max upload size
             security: {
                 allowedTypes: [
                     "image/*",
