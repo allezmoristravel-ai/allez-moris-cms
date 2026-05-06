@@ -454,6 +454,7 @@ export interface ApiAccommodationAccommodation
           localized: false;
         };
       }>;
+    bookings: Schema.Attribute.Relation<'oneToMany', 'api::booking.booking'>;
     coverImages: Schema.Attribute.Media<'images', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -805,6 +806,10 @@ export interface ApiBookingBooking extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    accommodation: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::accommodation.accommodation'
+    >;
     activity: Schema.Attribute.Relation<'manyToOne', 'api::activity.activity'>;
     bookingStatus: Schema.Attribute.Enumeration<
       ['pending', 'confirmed', 'cancelled', 'completed']
