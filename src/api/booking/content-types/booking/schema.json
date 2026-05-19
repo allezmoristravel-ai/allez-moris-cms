@@ -48,6 +48,9 @@
       "type": "decimal",
       "required": true
     },
+    "totalPriceMur": {
+      "type": "decimal"
+    },
     "client": {
       "type": "relation",
       "relation": "manyToOne",

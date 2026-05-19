@@ -96,6 +96,14 @@
         }
       }
     },
+    "publicPriceMur": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
     "allezmorisRate": {
       "type": "decimal",
       "pluginOptions": {
@@ -201,6 +209,14 @@
       "default": 0
     },
     "childPrice": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "childPriceMur": {
       "type": "decimal",
       "pluginOptions": {
         "i18n": {
