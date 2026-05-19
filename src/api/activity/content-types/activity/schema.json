@@ -273,6 +273,15 @@
       },
       "required": true,
       "default": true
+    },
+    "youtubeLink": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "regex": "^https:\\/\\/(www\\.)?(youtube\\.com\\/watch\\?v=|youtu\\.be\\/)[\\w-]+"
     }
   }
 }
