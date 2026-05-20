@@ -88,6 +88,14 @@
       "required": true,
       "default": true
     },
+    "publicPriceMur": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
     "publicPrice": {
       "type": "decimal",
       "pluginOptions": {

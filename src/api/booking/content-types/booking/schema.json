@@ -48,6 +48,10 @@
       "type": "decimal",
       "required": true
     },
+    "currency": {
+      "type": "string",
+      "default": "eur"
+    },
     "client": {
       "type": "relation",
       "relation": "manyToOne",

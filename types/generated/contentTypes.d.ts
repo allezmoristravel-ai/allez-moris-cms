@@ -542,6 +542,12 @@ export interface ApiAccommodationAccommodation
           localized: false;
         };
       }>;
+    publicPriceMur: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     region: Schema.Attribute.Enumeration<['North', 'South', 'East', 'West']> &
       Schema.Attribute.Required &
@@ -724,6 +730,12 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    publicPriceMur: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     region: Schema.Attribute.Enumeration<['North', 'South', 'East', 'West']> &
       Schema.Attribute.SetPluginOptions<{
@@ -825,6 +837,7 @@ export interface ApiBookingBooking extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    currency: Schema.Attribute.String & Schema.Attribute.DefaultTo<'eur'>;
     endDate: Schema.Attribute.DateTime;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
