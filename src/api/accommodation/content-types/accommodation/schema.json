@@ -123,6 +123,14 @@
       },
       "required": true
     },
+    "pricePerNightMur": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
     "currency": {
       "type": "string",
       "pluginOptions": {
