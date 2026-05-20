@@ -533,16 +533,16 @@ export interface ApiAccommodationAccommodation
           localized: false;
         };
       }>;
-    propertyType: Schema.Attribute.Enumeration<
-      ['Apartment', 'Villa', 'Guesthouse', 'Hotel', 'Bungalow']
-    > &
-      Schema.Attribute.Required &
+    pricePerNightMur: Schema.Attribute.Decimal &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
-    publicPriceMur: Schema.Attribute.Integer &
+    propertyType: Schema.Attribute.Enumeration<
+      ['Apartment', 'Villa', 'Guesthouse', 'Hotel', 'Bungalow']
+    > &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -608,6 +608,12 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
       }>;
     category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
     childPrice: Schema.Attribute.Decimal &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    childPriceMur: Schema.Attribute.Decimal &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -730,7 +736,7 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    publicPriceMur: Schema.Attribute.Integer &
+    publicPriceMur: Schema.Attribute.Decimal &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -861,6 +867,7 @@ export interface ApiBookingBooking extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     startDate: Schema.Attribute.DateTime & Schema.Attribute.Required;
     totalPrice: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    totalPriceMur: Schema.Attribute.Decimal;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

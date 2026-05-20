@@ -106,14 +106,6 @@
       },
       "required": true
     },
-    "publicPriceMur": {
-      "type": "integer",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
     "pricePerNight": {
       "type": "decimal",
       "pluginOptions": {
