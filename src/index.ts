@@ -30,6 +30,7 @@ export default {
       'api::rental-vehicle.rental-vehicle',
       'api::transfer-vehicle-category.transfer-vehicle-category',
       'api::transfer-price-route.transfer-price-route',
+      'api::holiday-package.holiday-package',
       // Existing types
       'api::activity.activity',
       'api::category.category',
