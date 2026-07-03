@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "global_setting",
+  "info": {
+    "singularName": "global-setting",
+    "pluralName": "global-settings",
+    "displayName": "Global Settings"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "footerHelpLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "navigation.help-link",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

@@ -175,6 +175,30 @@
       "relation": "oneToMany",
       "target": "api::booking.booking",
       "mappedBy": "accommodation"
+    },
+    "isDeal": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "discountPrice": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "originalPrice": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }

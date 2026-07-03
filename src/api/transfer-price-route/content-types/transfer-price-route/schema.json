@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transfer_price_routes",
+  "info": {
+    "singularName": "transfer-price-route",
+    "pluralName": "transfer-price-routes",
+    "displayName": "Transfer Price Route"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "destination": {
+      "type": "string"
+    },
+    "standardPrice": {
+      "type": "string"
+    },
+    "familyPrice": {
+      "type": "string"
+    },
+    "coachPrice": {
+      "type": "string"
+    },
+    "luxuryPrice": {
+      "type": "string"
+    },
+    "sortOrder": {
+      "type": "integer"
+    }
+  }
+}

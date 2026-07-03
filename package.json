@@ -15,9 +15,9 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.44.0",
-    "@strapi/plugin-users-permissions": "5.44.0",
-    "@strapi/strapi": "5.44.0",
+    "@strapi/plugin-cloud": "^5.50.0",
+    "@strapi/plugin-users-permissions": "^5.50.0",
+    "@strapi/strapi": "^5.50.0",
     "axios": "^1.13.2",
     "better-sqlite3": "12.4.1",
     "react": "^18.0.0",
@@ -29,6 +29,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "esbuild": "^0.28.1",
     "typescript": "^5"
   },
   "engines": {
@@ -38,5 +39,15 @@
   "strapi": {
     "uuid": "d327ebce-df2f-48b5-a16a-b057fab5c395",
     "installId": "8e1d543e43159195df858eddc27e4b63364dd3e7b56e2eb0e4f7564d3d8dc6c7"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "esbuild@0.27.7": true,
+    "esbuild@0.21.5": true,
+    "@strapi/strapi@5.50.0": true,
+    "@swc/core@1.15.43": true,
+    "better-sqlite3@12.4.1": true,
+    "core-js-pure@3.49.0": true,
+    "sharp@0.33.5": true
   }
 }

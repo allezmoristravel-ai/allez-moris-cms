@@ -24,11 +24,24 @@ export interface ItineraryItemItem extends Struct.ComponentSchema {
   };
 }
 
+export interface NavigationHelpLink extends Struct.ComponentSchema {
+  collectionName: 'components_navigation_help_links';
+  info: {
+    displayName: 'HelpLink';
+    icon: 'link';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'faq-item.item': FaqItemItem;
       'itinerary-item.item': ItineraryItemItem;
+      'navigation.help-link': NavigationHelpLink;
     }
   }
 }
