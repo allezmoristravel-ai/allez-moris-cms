@@ -760,6 +760,18 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    adultPrice: Schema.Attribute.Decimal &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    adultPriceMur: Schema.Attribute.Decimal &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     agentRate: Schema.Attribute.Decimal &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -899,18 +911,6 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
       }>;
     provider: Schema.Attribute.Relation<'oneToOne', 'api::provider.provider'>;
     providerRate: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    publicPrice: Schema.Attribute.Decimal &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    publicPriceMur: Schema.Attribute.Decimal &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;

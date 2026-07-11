@@ -88,15 +88,7 @@
       "required": true,
       "default": true
     },
-    "publicPriceMur": {
-      "type": "integer",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "publicPrice": {
+    "adultPrice": {
       "type": "decimal",
       "pluginOptions": {
         "i18n": {
@@ -104,7 +96,7 @@
         }
       }
     },
-    "publicPriceMur": {
+    "adultPriceMur": {
       "type": "decimal",
       "pluginOptions": {
         "i18n": {

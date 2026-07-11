@@ -214,15 +214,15 @@ These are the pricing-relevant fields on `Activity` that the frontend needs when
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `publicPrice` | `decimal` | Per-person price (or group price if `isGroupPrice` is true) |
+| `adultPrice` | `decimal` | Per-adult price (or group price if `isGroupPrice` is true) |
 | `childPrice` | `decimal` | Per-child price |
-| `isGroupPrice` | `boolean` | If `true`, `publicPrice` is for the entire group, not per person |
+| `isGroupPrice` | `boolean` | If `true`, `adultPrice` is for the entire group, not per person |
 | `maxPersons` | `integer` | Maximum participants allowed |
 | `documentId` | `string` | **Use this** when linking to a booking, not the numeric `id` |
 
 #### Fetch activity pricing
 ```
-GET /api/activities/:documentId?fields[0]=publicPrice&fields[1]=childPrice&fields[2]=isGroupPrice&fields[3]=maxPersons
+GET /api/activities/:documentId?fields[0]=adultPrice&fields[1]=childPrice&fields[2]=isGroupPrice&fields[3]=maxPersons
 ```
 
 ---
