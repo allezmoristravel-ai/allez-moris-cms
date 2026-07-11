@@ -766,12 +766,6 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    adultPriceMur: Schema.Attribute.Decimal &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     agentRate: Schema.Attribute.Decimal &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -794,12 +788,6 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
       }>;
     category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
     childPrice: Schema.Attribute.Decimal &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    childPriceMur: Schema.Attribute.Decimal &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
