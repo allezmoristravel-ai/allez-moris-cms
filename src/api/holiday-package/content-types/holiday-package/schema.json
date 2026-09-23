@@ -74,6 +74,15 @@
         }
       }
     },
+    "currency": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "default": "€"
+    },
     "originalPrice": {
       "type": "decimal",
       "pluginOptions": {
@@ -123,6 +132,16 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        }
+      }
+    },
+    "starRating": {
+      "type": "integer",
+      "min": 3,
+      "max": 5,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
         }
       }
     },
